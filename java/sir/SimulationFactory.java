@@ -10,14 +10,14 @@ public abstract class SimulationFactory
 {
 
 	//Will use the default progression proposer
-	public static Simulation make(State[] states)
+	public static Simulation make(State[] states, double thres)
 	{
-		return make(states, AverageProgressionProposer.getInstance());
+		return make(states, AverageProgressionProposer.getInstance(), thres);
 	}
 
-	public static Simulation make(State[] states, ProgressionProposer proposer)
+	public static Simulation make(State[] states, ProgressionProposer proposer, double thres)
 	{
-		return new Simulation(states[states.length-1], proposer.propose(states));
+		return new Simulation(states[states.length-1], proposer.propose(states, thres));
 	}
 
 	

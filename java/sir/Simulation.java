@@ -52,7 +52,8 @@ public class Simulation
 		//elegant, to a point
 		State[] res = new State[days+1];
 		res[0] = start;
-		for(int k=1;k<days;k++) res[k] = res[k-1].next(progression);
+		for(int k=1;k<=days;k++)
+			res[k] = res[k-1].next(progression);
 		return res;
 	}
 	

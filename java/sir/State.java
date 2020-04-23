@@ -51,7 +51,7 @@ public class State
 					n											,
 					(int) (i + newInfective(progression))		,
 					(int) (ni + newNonInfective(progression))	,
-					day++
+					day+1
 				);
 	}
 	
@@ -73,7 +73,7 @@ public class State
 					((this.i - previous.i)+(this.ni - previous.ni)) 
 					/ 
 					k,
-					(this.ni - previous.ni) / previous.i	
+					((this.ni - previous.ni) / ((double)previous.i))	
 				);
 	}
 

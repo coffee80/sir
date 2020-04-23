@@ -7,6 +7,6 @@ package sir;
  */
 public interface ProgressionProposer 
 {
-	Progression propose(State[] states);
+	Progression propose(State[] states, double thres);
 
 }
