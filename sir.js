@@ -168,15 +168,14 @@ var SIRFactory =
             res.push(states[i].difference(states[i-1]));
 
         //now I have an array of {beta, gamma} objects
-        //now, how to guess. Averaging would be poor practice, as beta and gamma
-        //are likely to go a given path, which may be linear, parabolic, or something else
-        //we may apply least square method (OLS), hoping it's linear
+        //now, how to guess. 
+        //I'll go the average way, considering the last p numbers
 
         var x    = res.map(function(x,i){return i;}); 
         var beta = res.map(function(x){return x.beta});
         var gamma = res.map(function(x){return x.gamma});
 
-        //these are lines
+        //these are the projected values
         var beta = strategy(x,beta,x.length);
         var gamma = strategy(x,gamma,x.length);
 
